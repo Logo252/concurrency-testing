@@ -19,3 +19,14 @@ Differences:
 8. Threading is used for real-time applications. Multiprocessing is used for non-real-time applications.
 9. Threading is used for short-lived tasks. Multiprocessing is used for long-lived tasks.
 10. Threading is used for cooperative multitasking. Multiprocessing is used for preemptive multitasking.
+
+
+# TO DO:
+# ======
+1. The goal is to convert the single threaded script to multithreaded and multi processed scripts. Then compare the performance of the three scripts.
+2. The exercises are under the folder `exercises`
+3. Each exercise contains folder which contains single threaded script
+4. As the example, `factorial` folder contains completed exercise - script to calculate factorial of a number in 3 ways:
+    1. Single threaded
+    2. Multithreaded
+    3. Multiprocessed
