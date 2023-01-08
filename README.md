@@ -21,6 +21,16 @@ Differences:
 10. Threading is used for cooperative multitasking. Multiprocessing is used for preemptive multitasking.
 
 
+# Multi threading
+Report the default number of worker threads on your system
+```
+from concurrent.futures import ThreadPoolExecutor
+# create a thread pool with the default number of worker threads
+executor = ThreadPoolExecutor()
+# report the number of worker threads chosen by default
+print(executor._max_workers)
+```
+
 # TO DO:
 # ======
 1. The goal is to convert the single threaded script to multithreaded and multi processed scripts. Then compare the performance of the three scripts.
