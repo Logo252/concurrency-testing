@@ -1,7 +1,12 @@
-# Create venv in current directory:
+# Project setup:
+
+## Create venv in current directory:
 `python3 -m venv ./venv`
 
-# Install the dependencies
+## Activate venv:
+`source venv/bin/activate`
+
+## Install the dependencies
 `pip install -r requirements.txt`
 
 # Threading vs Multiprocessing
