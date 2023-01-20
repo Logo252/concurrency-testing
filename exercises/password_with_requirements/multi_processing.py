@@ -1,9 +1,11 @@
-import time
-import string
-import random
 import multiprocessing
+import random
+import string
+import time
 
 SIZES = [12 for x in range(1_000_000)]
+
+LOCK = multiprocessing.Lock()
 
 
 def generate_random_password(size):
@@ -20,7 +22,8 @@ def generate_random_password(size):
     for i in range(size - 4):
         password += random.choice(all_chars)
 
-    print(f"Generated password: {password}. Size: {size}")
+    with LOCK:
+        print(f"Generated password: {password}. Size: {size}")
 
 
 if __name__ == "__main__":

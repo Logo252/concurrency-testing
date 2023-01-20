@@ -1,7 +1,9 @@
-import time
 import concurrent.futures
+import time
+from threading import Lock
 
 DECIMALS = [50 + x for x in range(1_000_000)]
+LOCK = Lock()
 
 
 def convert_decimal_to_binary(num):
@@ -18,7 +20,8 @@ def convert_decimal_to_binary(num):
     for bit in bits:
         binary += str(bit)
 
-    print(f"Decimal number {_decimal} converted to binary is: {binary}")
+    with LOCK:
+        print(f"Decimal number {_decimal} converted to binary is: {binary}")
 
 
 if __name__ == "__main__":

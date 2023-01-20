@@ -19,7 +19,10 @@ def is_number_prime(num):
 if __name__ == "__main__":
     start_time = time.time()
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+    thread_pool_executor = concurrent.futures.ThreadPoolExecutor()
+    print(f"Number of threads used: {thread_pool_executor._max_workers}")
+
+    with thread_pool_executor as executor:
         executor.map(is_number_prime, NUMBERS)
 
     duration_in_s = (time.time() - start_time)
